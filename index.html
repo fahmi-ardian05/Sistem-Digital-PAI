@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIMADRASAH - Azhary Mardhani, S.Kom.</title>
+    <title>SIMADRASAH - Muhamad Fahmi Ardian, S.Pd.</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -83,13 +83,13 @@
         const appId = typeof __app_id !== 'undefined' ? __app_id : 'simadrasah-app';
         
         const firebaseConfig = {
-            apiKey: "AIzaSyA3v19W60OQ5qfKYELEvmmkKaO-Gf6zHgs",
-            authDomain: "informatica-class.firebaseapp.com",
-            projectId: "informatica-class",
-            storageBucket: "informatica-class.firebasestorage.app",
-            messagingSenderId: "352869091816",
-            appId: "1:352869091816:web:db2b72fca4d97c142bbc5d",
-            measurementId: "G-PX38SBS7VS"
+            apiKey: "AIzaSyBmzDspz4SFxRtGPwMeMNkEq9N962hrVks",
+  authDomain: "fahmiardian-d0cdd.firebaseapp.com",
+  projectId: "fahmiardian-d0cdd",
+  storageBucket: "fahmiardian-d0cdd.firebasestorage.app",
+  messagingSenderId: "186148171504",
+  appId: "1:186148171504:web:9118e1028e13e9e3fd5c35",
+  measurementId: "G-405G702E9T"
         };
 
         try {
@@ -315,7 +315,7 @@
                                 Selamat Datang, {teacher.name}! 👋
                             </h2>
                             <p className="text-sky-100 text-xs sm:text-sm font-medium leading-relaxed">
-                                Sistem Informasi Absensi & Penilaian Informatika Kurikulum Merdeka. Kelola presensi lab komputer, plotting posisi PC client, input nilai formatif & sumatif, serta ekspor RDM dengan cepat.
+                                Sistem Informasi Absensi & Penilaian Al Qur'an Hadits Kurikulum Merdeka. Kelola presensi lab komputer, plotting posisi PC client, input nilai formatif & sumatif, serta ekspor RDM dengan cepat.
                             </p>
                             <div className="pt-2 flex flex-wrap gap-3">
                                 <button 
@@ -496,7 +496,7 @@
                     doc.setFontSize(14);
                     doc.text("KLASEMEN & PERINGKAT INDIVIDU SISWA", 14, 15);
                     doc.setFontSize(10);
-                    doc.text(`Madrasah: ${teacher?.school || 'Madrasah'} | Mapel: ${teacher?.subject || 'Informatika'} | TP: ${activeYear || ''} (${activeSemester || ''}) | Filter: ${filterScope}`, 14, 22);
+                    doc.text(`Madrasah: ${teacher?.school || 'Madrasah'} | Mapel: ${teacher?.subject || 'Al Qur'an Hadits'} | TP: ${activeYear || ''} (${activeSemester || ''}) | Filter: ${filterScope}`, 14, 22);
 
                     const headCols = ["Peringkat", "No. Absen", "Nama Siswa", "Kelas", "Rata Formatif", "Praktikum", "PAS", "Nilai Akhir", "Predikat"];
                     const bodyRows = rankedStudents.map((st, idx) => [
@@ -528,7 +528,7 @@
                     doc.setFontSize(14);
                     doc.text("KLASEMEN & PEROLEHAN POIN KELOMPOK PRAKTIKUM", 14, 15);
                     doc.setFontSize(10);
-                    doc.text(`Madrasah: ${teacher?.school || 'Madrasah'} | Mapel: ${teacher?.subject || 'Informatika'} | TP: ${activeYear || ''} (${activeSemester || ''}) | Filter: ${filterScope}`, 14, 22);
+                    doc.text(`Madrasah: ${teacher?.school || 'Madrasah'} | Mapel: ${teacher?.subject || 'Al Qur'an Hadits'} | TP: ${activeYear || ''} (${activeSemester || ''}) | Filter: ${filterScope}`, 14, 22);
 
                     const headCols = ["Peringkat", "Nama Kelompok", "Kelas Rombel", "Total Poin Kelompok"];
                     const bodyRows = rankedGroups.map((g, idx) => [
@@ -945,7 +945,7 @@
                 const doc = new jsPdfClass({ orientation: 'landscape' });
                 
                 doc.setFontSize(14);
-                doc.text("REKAPITULASI PRESENSI MINGGUAN INFORMATIKA", 14, 15);
+                doc.text("REKAPITULASI PRESENSI MINGGUAN Al Qur'an Hadits", 14, 15);
                 doc.setFontSize(10);
                 doc.text(`Kelas: ${selectedClass} | Tanggal Cetak: ${new Date().toLocaleDateString('id-ID')}`, 14, 22);
 
@@ -977,7 +977,7 @@
                     });
                 }
 
-                doc.save(`Rekap_Presensi_Informatika_${selectedClass}.pdf`);
+                doc.save(`Rekap_Presensi_Al Qur'an Hadits_${selectedClass}.pdf`);
                 showToast(`File PDF Presensi ${selectedClass} berhasil diunduh!`);
             };
 
@@ -1905,7 +1905,7 @@
                 const doc = new jsPdfClass({ orientation: 'landscape' });
 
                 doc.setFontSize(14);
-                doc.text("LEGER NILAI INFORMATIKA KURIKULUM MERDEKA", 14, 15);
+                doc.text("LEGER NILAI Al Qur'an Hadits KURIKULUM MERDEKA", 14, 15);
                 doc.setFontSize(10);
                 doc.text(`Madrasah: ${teacher.school} | TP: ${activeYear} (${activeSemester}) | Filter: ${filterClass}`, 14, 22);
 
@@ -1928,7 +1928,7 @@
                     });
                 }
 
-                doc.save(`Leger_Informatika_${filterClass}.pdf`);
+                doc.save(`Leger_Al Qur'an Hadits_${filterClass}.pdf`);
                 showToast(`PDF Leger Nilai (${filterClass}) berhasil diunduh!`);
             };
 
@@ -2076,7 +2076,7 @@
                     });
                 }
 
-                doc.save(`Ekspor_RDM_Informatika_${filterScope}.pdf`);
+                doc.save(`Ekspor_RDM_Al Qur'an Hadits_${filterScope}.pdf`);
                 showToast(`PDF Ekspor RDM (${filterScope}) berhasil diunduh!`);
             };
 
@@ -2898,7 +2898,7 @@
                                         value={profileForm.name}
                                         onChange={e => setProfileForm({ ...profileForm, name: e.target.value })}
                                         className="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs font-bold text-slate-900 focus:ring-2 focus:ring-sky-500 focus:outline-none"
-                                        placeholder="e.g. Azhary Mardhani, S.Kom."
+                                        placeholder="e.g. Muhamad Fahmi Ardian, S.Pd."
                                     />
                                 </div>
 
@@ -2920,7 +2920,7 @@
                                         value={profileForm.subject}
                                         onChange={e => setProfileForm({ ...profileForm, subject: e.target.value })}
                                         className="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs font-bold text-slate-900 focus:ring-2 focus:ring-sky-500 focus:outline-none"
-                                        placeholder="e.g. Informatika"
+                                        placeholder="e.g. Al Qur'an Hadits"
                                     />
                                 </div>
 
@@ -3405,14 +3405,14 @@
                 try {
                     const saved = localStorage.getItem('simadrasah_teacher');
                     return saved ? JSON.parse(saved) : {
-                        name: 'Azhary Mardhani, S.Kom.',
+                        name: 'Muhamad Fahmi Ardian, S.Pd.',
                         nip: '19880512 201503 1 002',
-                        subject: 'Informatika',
+                        subject: 'Al Qur'an Hadits',
                         school: 'MTs Negeri 1 Jakarta',
                         phone: ''
                     };
                 } catch(e) {
-                    return { name: 'Azhary Mardhani, S.Kom.', nip: '19880512 201503 1 002', subject: 'Informatika', school: 'MTs Negeri 1 Jakarta', phone: '' };
+                    return { name: 'Muhamad Fahmi Ardian, S.Pd.', nip: '19880512 201503 1 002', subject: 'Al Qur'an Hadits', school: 'MTs Negeri 1 Jakarta', phone: '' };
                 }
             });
 
